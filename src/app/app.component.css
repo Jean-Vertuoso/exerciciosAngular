@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Botoes button{
+    margin: 0px 5px 0px 5px;
+}
