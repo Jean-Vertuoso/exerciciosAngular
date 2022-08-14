@@ -1,0 +1,22 @@
+.box{
+    height: 420px; 
+    width: 420px;
+}
+
+.caixaDigitacao{
+    width: 300px;
+    height: 37px;
+}
+
+.login{
+    width:300px;
+}
+
+.btn{
+    width: 67px;
+}
+
+.rodape{
+    height: 55px;
+
+}
