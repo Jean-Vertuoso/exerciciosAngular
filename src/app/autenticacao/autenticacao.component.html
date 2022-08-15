@@ -17,6 +17,9 @@
                     <label for="idEmail" class="pt-1 pb-2">E-Mail Address</label>
                     <input
                         id="idEmail"
+                        name="nmEmail"
+                        [value]="email"
+                        (keyup)="insereEmail($event)"
                         class="caixaDigitacao border border-1 rounded-1" 
                         type="text">
 
@@ -32,6 +35,8 @@
                     <div>
                         <input
                             id="idPassword"
+                            [value]="senha"
+                            (keyup)="insereSenha($event)"
                             class="caixaDigitacao border border-1 rounded-1" 
                             type="password">
                     </div>
@@ -52,7 +57,8 @@
                     <div>
                         <button 
                             type="button" 
-                            class="btn btn-primary rounded-1">Login
+                            class="btn btn-primary rounded-1"
+                            (click)="login()">Login
                         </button>
                     </div>
 
@@ -62,7 +68,8 @@
 
                     <output
                         id="idAviso"
-                        class="caixaDigitacao h-100"
+                        [value]="msn"
+                        class="caixaDigitacao h-100 text-center fw-bolder text-success"
                         type="text">
                     </output>
 
