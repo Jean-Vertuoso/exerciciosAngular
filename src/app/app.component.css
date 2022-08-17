@@ -1,0 +1,26 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Botoes{
+    padding: 10px;
+}
+
+.Botoes button{
+    margin: 0px 5px 0px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: whitesmoke;
+}
