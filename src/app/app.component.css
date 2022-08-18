@@ -1,10 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    margin-top: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .container{
     width: 100vw;
     height: 100vh;
@@ -21,6 +14,13 @@
     align-items: center;
 }
 
+.Botoes{
+    padding: 10px;
+}
+
 .Botoes button{
     margin: 0px 5px 0px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: whitesmoke;
 }
