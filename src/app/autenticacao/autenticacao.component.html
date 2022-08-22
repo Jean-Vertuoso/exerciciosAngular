@@ -15,13 +15,22 @@
                 <div class="email d-flex flex-column pt-3 pb-3 text-secondary">
 
                     <label for="idEmail" class="pt-1 pb-2">E-Mail Address</label>
+
                     <input
+                        *ngIf="!usuarioBloqueado; else bloqueiaEmail"
                         id="idEmail"
                         name="nmEmail"
-                        [value]="email"
+                        [value]="usuario.userId"
                         (keyup)="insereEmail($event)"
                         class="caixaDigitacao border border-1 rounded-1" 
                         type="text">
+
+                    <ng-template #bloqueiaEmail>
+                        <input
+                        disabled
+                        class="caixaDigitacao border border-1 rounded-1" 
+                        type="text">
+                    </ng-template>
 
                 </div>
 
@@ -34,11 +43,19 @@
 
                     <div>
                         <input
+                            *ngIf="!usuarioBloqueado; else bloqueiaSenha"
                             id="idPassword"
-                            [value]="senha"
+                            [value]="usuario.password"
                             (keyup)="insereSenha($event)"
                             class="caixaDigitacao border border-1 rounded-1" 
                             type="password">
+
+                        <ng-template #bloqueiaSenha>
+                            <input
+                            disabled
+                            class="caixaDigitacao border border-1 rounded-1" 
+                            type="password">
+                        </ng-template>
                     </div>
 
                 </div>
@@ -66,12 +83,27 @@
 
                 <div>
 
-                    <output
-                        id="idAviso"
-                        [value]="msn"
-                        class="caixaDigitacao h-100 text-center fw-bolder text-success"
-                        type="text">
-                    </output>
+
+                    <div *ngIf="mostraSpinner; else mostraMensagem"> 
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden"></span>
+                          </div>
+                    </div>
+
+                    <ng-template #mostraMensagem>
+
+                        <output *ngIf="temMensagem"
+                            [ngClass]="{
+                                'Mensagem-Erro': temErro,
+                                'Mensagem-Success': !temErro
+                            }"
+                            id="idAviso"
+                            [value]="msn"
+                            class="caixaDigitacao h-100 text-center fw-bolder"
+                            type="text">
+                        </output>
+
+                    </ng-template>
 
                 </div>
 

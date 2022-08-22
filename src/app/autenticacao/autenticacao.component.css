@@ -3,6 +3,10 @@
     width: 420px;
 }
 
+.body{
+    height:375px;
+}
+
 .caixaDigitacao{
     width: 300px;
     height: 37px;
@@ -19,4 +23,17 @@
 .rodape{
     height: 55px;
 
+}
+
+.Mensagem-Erro{
+    color: red; 
+}
+
+.Mensagem-Success{
+    color: green;
+}
+
+.spinner-border{
+    position: absolute;
+    left: 100vh;
 }
