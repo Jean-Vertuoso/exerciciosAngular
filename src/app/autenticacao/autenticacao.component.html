@@ -20,7 +20,6 @@
                         *ngIf="!usuarioBloqueado; else bloqueiaEmail"
                         id="idEmail"
                         name="nmEmail"
-                        [value]="usuario.userId"
                         (keyup)="insereEmail($event)"
                         class="caixaDigitacao border border-1 rounded-1" 
                         type="text">
@@ -45,7 +44,6 @@
                         <input
                             *ngIf="!usuarioBloqueado; else bloqueiaSenha"
                             id="idPassword"
-                            [value]="usuario.password"
                             (keyup)="insereSenha($event)"
                             class="caixaDigitacao border border-1 rounded-1" 
                             type="password">
