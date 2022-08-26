@@ -11,9 +11,7 @@ import { Usuario } from "../interface/usuario";
 
 export class AutenticacaoComponent{
 
-    msn: string = ""; 
-    user: string = "XPTO-21";
-    password: string = "Trocar@123";
+    msn: string = "";
     tentativas: number = 3;
     temMensagem: boolean = false;
     mostraSpinner: boolean = false;
@@ -21,8 +19,8 @@ export class AutenticacaoComponent{
     usuarioBloqueado: boolean = false;
     corMensagem = ['Mensagem-Erro', 'Mensagem-Sucess']
     usuario: Usuario = {
-        userId: '',
-        password: '',
+        userId: 'XPTO-21',
+        password: 'Trocar@123',
         tipo: '',
     };
 
@@ -43,16 +41,16 @@ export class AutenticacaoComponent{
             this.temMensagem = true;
           }, 2000)
         
-        if ((this.usuario.userId === this.user && this.usuario.password === this.password) && isTelaValida && (this.tentativas > -1)){
+        if ((this.usuario.userId === "XPTO-21" && this.usuario.password === "Trocar@123") && isTelaValida && (this.tentativas > -1)){
             this.msn = "Logado!";
             this.temErro = false;
 
-            } else if ((this.usuario.userId !== this.user) && isTelaValida){
+            } else if ((this.usuario.userId !== "XPTO-21") && isTelaValida){
                 this.msn = "Acesso negado, usuário incorreto!";
                 this.tentativas--;
                 this.temErro = true;
 
-                } else if ((this.usuario.userId === this.user && this.usuario.password !== this.password) && isTelaValida){
+                } else if ((this.usuario.userId === "XPTO-21" && this.usuario.password !== "Trocar@123") && isTelaValida){
                     this.msn = "Acesso negado, senha incorreta!";
                     this.tentativas--;
                     this.temErro = true;
