@@ -1,0 +1,13 @@
+p{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.imagem{
+    position: absolute;
+    left: 50%;
+    top: 35%;
+}

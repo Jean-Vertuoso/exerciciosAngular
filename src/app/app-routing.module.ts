@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: AutenticacaoComponent },
   { path: 'contato', component: ContatoComponent },
-  { path: '**', component: Error404Component },
+  { path: '**', component: Error404Component }
   ];
 
   @NgModule({
