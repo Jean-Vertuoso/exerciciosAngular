@@ -1,25 +1,38 @@
-<div class="container">
-
-  <div class="box">
-
-    <div class="Titulo">
-      <h1>{{ titulo }}</h1>
+<nav class="navbar navbar-dark bg-light p-0 m-0 justify-content-start">
+    <div class="logo ms-2 mb-3 p-2">
+        <a href="/"><img class="text-white" src="../assets/entra21.ico" alt="Logo Entra21/Início" width="150" height="50"></a>
     </div>
-
-    <div class="CaixaDeTexto">
-      <input type="text"
-             [value]="valor"
-             (input)="valor = campoInput.value"
-             #campoInput>
+    <div>
+        <ul class="d-flex ms-0 ps-0" type="none">
+            <li><button type="button" class="btn btn-light pt-3 pb-3 fs-5"><a class="fw-bold text-decoration-none text-secondary" routerLink="/login">Login</a></button></li>
+            <li><button type="button" class="btn btn-light pt-3 pb-3 fs-5"><a class="fw-bold text-decoration-none text-secondary" routerLink="/contato">Contato</a></button></li>
+        </ul>
     </div>
-
-    <div class="Botoes">
-      <button (click)="enviarProTitulo()">Salvar</button>
-      <button (click)="limparCampo()">Limpar</button>
+</nav>
+    <router-outlet></router-outlet>
+<footer class="rodape bg-light text-center text-lg-start w-100">
+    <div class="text-center p-3 mb-2 border-top">
+        <div class="d-flex flex-row justify-content-around w-100 align-items-end ">
+          <div class="d-flex flex-row align-items-baseline justify-content-around w-100">
+              <h6 class="copyright text-secondary fw-normal">© 2022 Company, Inc</h6>
+            <div>
+              <a href="https://www.facebook.com/Jeaan.v" class="me-4 link-grayish"><img src="../assets/iconefacebook.png" alt="Icone Facebook" width="40" height="30">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/jeanrocha1.0/" class="me-4 link-grayish"><img src="../assets/iconeinstagram.png" alt="Icone Instagram" width="40" height="30">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/jean-da-rocha-vertuoso/" class="me-4 link-grayish"><img src="../assets/iconelinkedin.png" alt="Icone Instagram" width="40" height="30">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://wa.me/5548998146654" class="me-4 link-grayish"><img src="../assets/iconewhatsapp.png" alt="Icone Whatsapp" width="40" height="30">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="" class="me-4 link-grayish">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
     </div>
-
-  </div>
-
-</div>
-
-<app-autenticacao></app-autenticacao>
+</footer>

@@ -1,0 +1,62 @@
+.texto{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.conversa{
+    position: absolute;
+    top:40%;
+    left: 50%;
+}
+
+.botaoInvisivel{
+    border-radius: 90px;
+    width: 185px;
+    height: 105px;
+    position: absolute;
+    top:67%;
+    left: 74%;
+    background-color: transparent;
+    border: none;
+}
+
+.balloon-box {
+    width: 300px;
+    height: 300px;
+    background: skyblue;
+    border-radius: 26.5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+  }
+  
+  .balloon-box::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 100%;
+    background: #f1f1f1;
+    position: absolute;
+    bottom: -7px;
+    right: 30px;
+  }
+  .balloon-box::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #f1f1f1;
+    position: absolute;
+    right: 15px;
+    bottom: -21px;
+  }
+  .balloon-box {
+    filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
+  }
