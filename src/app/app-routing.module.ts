@@ -8,8 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'login', component: AutenticacaoComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'contato', component: ContatoComponent, canActivate: [AuthGuard]},
   { path: '**', component: Error404Component }
   ];

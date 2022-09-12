@@ -28,8 +28,8 @@ export class AutenticacaoComponent{
     };
 
     usuarios: Usuario = {
-        userId: '',
-        password: '',
+        userId: '123',
+        password: '123',
         tipo: '',
     };
 
