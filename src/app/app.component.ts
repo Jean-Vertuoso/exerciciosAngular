@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutenticacaoService } from './services/autenticacao.service';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,16 @@ export class AppComponent {
   nome: string = 'Jean';
   titulo: string = "Titulo";
   valor: string = "";
+  mostrarMenu: boolean = false;
 
+  constructor(private autenticacaoService: AutenticacaoService){}
 
-public enviarProTitulo(){
-  this.titulo = this.valor;
-}
+  ngOnInit(){
+    this.autenticacaoService.mostrarMenuEmitter.subscribe((mostrar: boolean) => this.mostrarMenu = mostrar);
+  }
 
-public limparCampo(){
-  this.valor = "";
-}
+  public logout(){
+    this.autenticacaoService.logout();    
+  }
 
 }

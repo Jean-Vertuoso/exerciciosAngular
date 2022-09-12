@@ -1,6 +1,8 @@
 import { NgClass } from "@angular/common";
 import { ThisReceiver } from "@angular/compiler";
 import { Component, OnInit } from "@angular/core";
+import { Router, RouterModule, Routes } from "@angular/router";
+
 import { Usuario } from "../interface/usuario";
 import { AutenticacaoService } from "../services/autenticacao.service";
 
@@ -20,12 +22,18 @@ export class AutenticacaoComponent{
     usuarioBloqueado: boolean = false;
     corMensagem = ['Mensagem-Erro', 'Mensagem-Sucess']
     usuario: Usuario = {
-        userId: 'XPTO-21',
-        password: 'Trocar@123',
+        userId: '',
+        password: '',
         tipo: '',
     };
 
-    constructor(private autenticacaoService: AutenticacaoService) { }
+    usuarios: Usuario = {
+        userId: '',
+        password: '',
+        tipo: '',
+    };
+
+    constructor(private autenticacaoService: AutenticacaoService, private router: Router) { }
 
     ngOnInit(): void {
     }
@@ -38,27 +46,27 @@ export class AutenticacaoComponent{
         this.usuario.password = (<HTMLInputElement>evento.target).value;
     }
 
-    public getUsuario(){
+    public login(){
         let isTelaValida: boolean = this.consistirTela();
         this.mostraSpinner = true;
-
-        this.autenticacaoService.getUsuario().subscribe((user) => (this.usuario = user[0]))
 
         setTimeout(() => {
             this.mostraSpinner = false;
             this.temMensagem = true;
-          }, 2000)
         
-        if ((this.usuario.userId === "XPTO-21" && this.usuario.password === "Trocar@123") && isTelaValida && (this.tentativas > -1)){
+        if ((this.usuario.userId === this.usuarios.userId && this.usuario.password === this.usuarios.password) && isTelaValida && (this.tentativas > -1)){            
+            this.autenticacaoService.login().subscribe((user) => (this.usuarios = user[0]))            
+            localStorage['token'] = 'hxqWS8773D';
+            this.router.navigate(['/']);
             this.msn = "Logado!";
             this.temErro = false;
 
-            } else if ((this.usuario.userId !== "XPTO-21") && isTelaValida){
+            } else if ((this.usuario.userId !== this.usuarios.userId) && isTelaValida){
                 this.msn = "Acesso negado, usuário incorreto!";
                 this.tentativas--;
                 this.temErro = true;
 
-                } else if ((this.usuario.userId === "XPTO-21" && this.usuario.password !== "Trocar@123") && isTelaValida){
+                } else if ((this.usuario.userId === this.usuarios.userId && this.usuario.password !== this.usuarios.password) && isTelaValida){
                     this.msn = "Acesso negado, senha incorreta!";
                     this.tentativas--;
                     this.temErro = true;
@@ -69,6 +77,8 @@ export class AutenticacaoComponent{
             this.usuarioBloqueado = true;
             this.temErro = true;
         }
+        
+        }, 2000)
     }
 
     public consistirTela(){

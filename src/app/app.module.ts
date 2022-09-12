@@ -10,6 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './services/auth/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     CommonModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

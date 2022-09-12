@@ -1,10 +1,10 @@
-<nav class="navbar navbar-dark bg-light p-0 m-0 justify-content-start">
+<nav class="navbar navbar-dark bg-light p-0 m-0 justify-content-start" *ngIf="mostrarMenu">
     <div class="logo ms-2 mb-3 p-2">
-        <a href="/"><img class="text-white" src="../assets/entra21.ico" alt="Logo Entra21/Início" width="150" height="50"></a>
+        <a routerLink="/"><img class="text-white" src="../assets/entra21.ico" alt="Logo Entra21/Início" width="150" height="50"></a>
     </div>
     <div>
         <ul class="d-flex ms-0 ps-0" type="none">
-            <li><button type="button" class="btn btn-light pt-3 pb-3 fs-5"><a class="fw-bold text-decoration-none text-secondary" routerLink="/login">Login</a></button></li>
+            <li><button type="button" class="btn btn-light pt-3 pb-3 fs-5"><a class="fw-bold text-decoration-none text-secondary" (click)="logout()">Logout</a></button></li>
             <li><button type="button" class="btn btn-light pt-3 pb-3 fs-5"><a class="fw-bold text-decoration-none text-secondary" routerLink="/contato">Contato</a></button></li>
         </ul>
     </div>
